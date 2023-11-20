@@ -1,0 +1,29 @@
+{
+  "text": "Show text",
+  "nav": {
+    "home": "Home",
+    "destinations": "Destinations",
+    "aboutUs": "About us",
+    "articles": "Articles",
+    "contacts": "Contacts"
+  },
+  "hero": {
+    "top": {
+      "luxury": "Luxury boat",
+      "hire": "Hire in phuket"
+    },
+    "logo": {
+      "yacht": "Yacht",
+      "charter": "Charter",
+      "phuket": "Phuket"
+    },
+    "quote": {
+      "first": "“ciao cara, tutto perfetto.",
+      "last": "giornata top e anche al cafe Del Mar è stato molto bello.”"
+    },
+    "contacts": {
+      "write": "Write to US",
+      "call": "Call US"
+    }
+  }
+}
