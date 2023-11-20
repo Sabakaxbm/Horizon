@@ -2,16 +2,12 @@ import type { ReactNode } from 'react'
 import { useEffect } from 'react'
 
 interface IModalComponentProperties {
-  onClick: () => void
+  onClick?: () => void
   children?: ReactNode
   isOpen: boolean
 }
 
-export const ModalComponent = ({
-  onClick,
-  isOpen,
-  children,
-}: IModalComponentProperties) => {
+export const ModalComponent = ({ isOpen, children }: IModalComponentProperties) => {
   const setBody = () => {
     document.body.style.overflow = 'auto'
   }
