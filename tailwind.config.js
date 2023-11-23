@@ -43,7 +43,7 @@ module.exports = {
       },
       height: {
         'nav-height': '91vh',
-        'nav-height-content': 'calc(100% - 10rem)',
+        'nav-height-content': 'calc(100% - 10.5rem)',
       },
       gridTemplateRows: {
         // Simple 8 row grid
