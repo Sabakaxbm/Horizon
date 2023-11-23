@@ -27,15 +27,11 @@ export const MobileNavigationComponent = () => {
       <Burger handleOpen={handleOpen} isOpen={isVisible} />
       <Portal id={'myportal'}>
         <ModalComponent
-          className={'fixed left-0 top-[5.2rem] z-10 flex h-screen w-screen bg-white'}
+          className={'fixed left-0 top-[5.2rem] z-10 flex h-nav-height w-screen bg-white'}
           onClick={handleOpen}
           isOpen={isVisible}
         >
-          <div
-            className={
-              'mx-page-mobile my-[2.125rem] flex h-nav-height w-screen flex-col '
-            }
-          >
+          <div className={'mx-page-mobile my-[2.125rem] flex w-screen flex-col '}>
             <nav className={'mb-auto flex flex-col'}>
               {Links.map((item) => (
                 <LinkComponent

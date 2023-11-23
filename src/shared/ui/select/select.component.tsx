@@ -55,7 +55,9 @@ export const SelectComponent = (props: SelectProperties) => {
         <div
           className={clsx(
             'flex items-center justify-center gap-2 rounded-md border p-2',
-            isOpen ? 'rounded-b-none border-b-0 border-active-link' : 'border-dark-blue'
+            isOpen
+              ? 'mb-[1px] rounded-b-none border-b-0 border-active-link'
+              : 'border-dark-blue'
           )}
         >
           <div className={'font-medium text-dark-blue'}>
@@ -72,7 +74,7 @@ export const SelectComponent = (props: SelectProperties) => {
         {isOpen && (
           <ul
             className={
-              'z-10 mt-[-0.3rem] w-full rounded-md rounded-t-none border border-t-0 border-active-link bg-white px-2 pb-1 leading-4 '
+              'absolute top-6 z-10 w-full rounded-md rounded-t-none border border-t-0 border-active-link bg-white p-2 py-1 leading-4'
             }
           >
             {options.map((option) => (
