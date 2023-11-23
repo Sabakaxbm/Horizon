@@ -31,7 +31,11 @@ export const MobileNavigationComponent = () => {
           onClick={handleOpen}
           isOpen={isVisible}
         >
-          <div className={'mx-page-mobile my-[2.125rem] flex w-screen flex-col '}>
+          <div
+            className={
+              'mx-page-mobile my-[2.125rem] flex h-nav-height-content w-screen flex-col '
+            }
+          >
             <nav className={'mb-auto flex flex-col'}>
               {Links.map((item) => (
                 <LinkComponent
