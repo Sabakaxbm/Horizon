@@ -1,6 +1,6 @@
 import '@shared/styles/global.scss'
 
-import { RegistrationComponent } from '@features/registration'
+import { RegistrationMobileComponent } from '@features/registration'
 import { HeroComponent } from '@widgets/layout/hero'
 import type { Metadata } from 'next'
 
@@ -21,7 +21,7 @@ export default function RootLayout() {
   return (
     <div className={'w-full'}>
       <HeroComponent />
-      <RegistrationComponent />
+      <RegistrationMobileComponent />
     </div>
   )
 }

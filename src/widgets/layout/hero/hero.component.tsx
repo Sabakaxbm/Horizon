@@ -5,7 +5,11 @@ import Image from 'next/image'
 export const HeroComponent = () => {
   // max-h-[45.125rem]
   return (
-    <div className={'relative h-full max-h-[29.875rem] w-full'}>
+    <div
+      className={
+        'relative mb-[3.875rem] h-full max-h-[29.875rem] w-full lg:max-h-[48rem]'
+      }
+    >
       <Image
         src={HeroMobile}
         alt={'heroImage'}
@@ -20,7 +24,7 @@ export const HeroComponent = () => {
       <div className="absolute inset-0 bg-black opacity-30"></div>
       <div
         className={
-          'relative grid h-full grid-cols-1 grid-rows-cus justify-between gap-2 p-page font-manrope font-bold text-white'
+          'relative grid h-full w-full grid-cols-1 grid-rows-2 justify-between p-page-mobile font-manrope font-bold text-white lg:grid-cols-2 lg:p-page lg:pt-8'
         }
       >
         <HeadingComponent />

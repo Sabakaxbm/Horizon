@@ -8,6 +8,7 @@ interface InputProperties extends InputHTMLAttributes<HTMLInputElement> {
   errors?: FieldError | undefined
 }
 
+// eslint-disable-next-line react/display-name
 export const InputComponent = forwardRef<HTMLInputElement, InputProperties>(
   (props: InputProperties, reference) => {
     const { label, id, required, errors } = props
@@ -20,7 +21,7 @@ export const InputComponent = forwardRef<HTMLInputElement, InputProperties>(
     )
 
     return (
-      <div className="relative my-2 font-montserrat text-sm font-medium text-dark-blue">
+      <div className="relative my-2 w-full text-sm font-medium text-dark-blue">
         <label htmlFor={id} className="text-gray-700">
           {required && <span className={'text-active-link'}>*</span>}
           {label}

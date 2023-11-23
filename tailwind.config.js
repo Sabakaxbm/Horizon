@@ -25,15 +25,20 @@ module.exports = {
         'montserrat': ['Montserrat'],
       },
       margin: {
-        'page': '1.5rem'
+        'page': '3rem',
+        'page-mobile': '1.5rem'
       },
       padding: {
-        'page': '1.5rem'
+        'page': '3rem',
+        'page-mobile': '1.5rem'
       },
       boxShadow: {
         '3xl': '0 6px 9px rgba(0, 0, 0, 0.35)',
         'active-button': [
           '0px 4px 20px 0px rgba(58, 167, 205, 0.20)'
+        ],
+        'form-shadow': [
+            '0px 18px 41px 0px rgba(0, 0, 0, 0.10);'
         ]
       },
       height: {
@@ -41,7 +46,7 @@ module.exports = {
       },
       gridTemplateRows: {
         // Simple 8 row grid
-        'cus': '65px, 1fr 1fr 1fr',
+        'cus': '90px, 1fr 1fr',
 
         // Complex site-specific row configuration
       }

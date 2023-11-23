@@ -10,7 +10,7 @@ export const RegistrationButtonComponent = ({
     <section>
       <div
         className={
-          'flex cursor-pointer items-center justify-center gap-5 bg-white px-page py-5 text-[1.5rem] font-bold'
+          'flex cursor-pointer items-center justify-center gap-4 bg-white px-page-mobile py-5 text-[1.5rem] font-bold lg:px-page'
         }
         onClick={onClick}
       >
