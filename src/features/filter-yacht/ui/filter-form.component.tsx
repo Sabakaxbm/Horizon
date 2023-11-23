@@ -1,17 +1,32 @@
-import { IconComponent } from '@shared/ui/icons'
+import { SelectFormComponent } from '@shared/ui/select'
+import { useState } from 'react'
 
+const optionsTypes = [
+  { title: 'Motor', value: 'motor' },
+  { title: 'Diesel', value: 'diesel' },
+]
 export const FilterFormComponent = () => {
+  const [type, setType] = useState<string>('')
+
+  const handleType = (value: string) => {
+    setType(value)
+  }
+
+  const selectedType = optionsTypes.find((item) => item.value === type)
+
   return (
     <div
       className={
-        'mb-6 flex cursor-pointer items-center justify-between gap-2 bg-white p-6 font-montserrat font-medium'
+        'mb-6 flex items-center justify-between gap-2 bg-white p-6 font-montserrat font-medium'
       }
     >
-      <div className={'flex items-center gap-2'}>
-        <IconComponent name={'filter'} className={'h-4 w-4'} />
-        <span>Filter</span>
-      </div>
-      <IconComponent name={'SelectArrow'} className={'h-4 w-4 fill-dark-blue'} />
+      <SelectFormComponent
+        label={'Type'}
+        options={optionsTypes}
+        selected={selectedType || null}
+        placeholder={'Motor'}
+        onChange={handleType}
+      />
     </div>
   )
 }
