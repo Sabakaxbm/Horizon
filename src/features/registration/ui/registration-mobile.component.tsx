@@ -10,7 +10,7 @@ export const RegistrationMobileComponent = () => {
   }
 
   return (
-    <div>
+    <div className={'visible lg:hidden'}>
       <RegistrationButtonComponent onClick={handleOptionClick} />
       {isOpen && <RegistrationFormComponent />}
     </div>

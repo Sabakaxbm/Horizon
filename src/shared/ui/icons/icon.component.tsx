@@ -5,6 +5,7 @@ const SelectArrow = dynamic(() => import('@public/assets/icons/Select-arrow.svg'
 const instagram = dynamic(() => import('@public/assets/icons/instagram-icon.svg'))
 const telegram = dynamic(() => import('@public/assets/icons/telegram-icon.svg'))
 const whatsapp = dynamic(() => import('@public/assets/icons/whatsapp-icon.svg'))
+const filter = dynamic(() => import('@public/assets/icons/filter.svg'))
 
 const iconTypes = {
   Logo,
@@ -12,6 +13,7 @@ const iconTypes = {
   instagram,
   telegram,
   whatsapp,
+  filter,
 }
 
 export type IconsTypes = keyof typeof iconTypes

@@ -1,5 +1,6 @@
 import '@shared/styles/global.scss'
 
+import { FilterYachtComponent } from '@features/filter-yacht'
 import { RegistrationMobileComponent } from '@features/registration'
 import { HeroComponent } from '@widgets/layout/hero'
 import type { Metadata } from 'next'
@@ -22,6 +23,9 @@ export default function RootLayout() {
     <div className={'w-full'}>
       <HeroComponent />
       <RegistrationMobileComponent />
+      <section className={'px-page-mobile lg:px-page'}>
+        <FilterYachtComponent />
+      </section>
     </div>
   )
 }

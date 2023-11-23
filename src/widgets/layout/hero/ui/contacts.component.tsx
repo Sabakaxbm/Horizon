@@ -12,7 +12,7 @@ export const ContactsComponent = () => {
     >
       <div className={styleBlockContacts}>
         <p className={'text-white-blue'}>{t('hero.contacts.write')}</p>
-        <div className={'flex flex-1 gap-3'}>
+        <div className={'flex flex-1 gap-3 text-white'}>
           <IconComponent name={'whatsapp'} className={'h-7 w-7 fill-white'} />
           <IconComponent name={'telegram'} className={'h-7 w-7'} />
           <IconComponent name={'instagram'} className={'h-7 w-7'} />
@@ -20,7 +20,7 @@ export const ContactsComponent = () => {
       </div>
       <div className={styleBlockContacts}>
         <p className={'text-white-blue'}>{t('hero.contacts.call')}</p>
-        <p className={'sm:text-[1.25rem]'}>+66 86 465 4545</p>
+        <p className={'text-white sm:text-[1.25rem]'}>+66 86 465 4545</p>
       </div>
       <RegistrationComponent />
     </div>

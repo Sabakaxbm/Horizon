@@ -7,7 +7,7 @@ export const HeroComponent = () => {
   return (
     <div
       className={
-        'relative mb-[3.875rem] h-full max-h-[29.875rem] w-full lg:max-h-[48rem]'
+        'relative h-full max-h-[29.875rem] w-full lg:mb-[3.875rem] lg:max-h-[48rem]'
       }
     >
       <Image
