@@ -8,7 +8,11 @@ const options = [
   { title: 'RU', value: 'ru' },
 ]
 
-export const SelectLanguageComponent = () => {
+interface SelectLanguageProperties {
+  openDown?: boolean
+}
+
+export const SelectLanguageComponent = ({ openDown }: SelectLanguageProperties) => {
   const router = useRouter()
   const { pathname, query, locale } = router
   const { i18n } = useTranslation()
@@ -34,6 +38,7 @@ export const SelectLanguageComponent = () => {
       selected={selectedLaguage || null}
       placeholder={locale?.toLocaleUpperCase()}
       onChange={handleLanguage}
+      openDown={openDown}
     />
   )
 }

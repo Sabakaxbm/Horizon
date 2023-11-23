@@ -5,11 +5,11 @@ export const FilterHeaderComponent = () => {
   return (
     <div
       className={
-        'relative flex h-[4.875rem] w-full items-center justify-center font-montserrat text-[1.5rem] font-bold text-white'
+        'relative mb-6 flex h-[4.875rem] w-full items-center justify-center font-montserrat text-[1.7rem] font-bold text-white'
       }
     >
       <Image className={'absolute'} src={bg} alt={'FilterHeaderBG'} fill />
-      <p className={'relative'}>FEATURED YACHTS</p>
+      <p className={'relative'}>Featured yachts</p>
     </div>
   )
 }

@@ -50,7 +50,7 @@ export const MobileNavigationComponent = () => {
                 </LinkComponent>
               ))}
             </nav>
-            <SelectLanguageComponent />
+            <SelectLanguageComponent openDown />
           </div>
         </ModalComponent>
       </Portal>

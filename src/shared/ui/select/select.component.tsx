@@ -14,9 +14,10 @@ type SelectProperties = {
   onChange?: (selected: Option['value']) => void
   onClose?: () => void
   className?: string
+  openDown?: boolean
 }
 export const SelectComponent = (props: SelectProperties) => {
-  const { options, placeholder, selected, onChange, onClose } = props
+  const { options, placeholder, selected, onChange, onClose, openDown } = props
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const rootReference = useRef<HTMLDivElement>(null)
 
@@ -50,14 +51,13 @@ export const SelectComponent = (props: SelectProperties) => {
       <div
         ref={rootReference}
         onClick={handlePlaceHolderClick}
-        className={'mt-auto inline-flex cursor-pointer select-none flex-col'}
+        className={'z-10 mt-auto inline-flex cursor-pointer select-none flex-col'}
       >
         <div
           className={clsx(
             'flex items-center justify-center gap-2 rounded-md border p-2',
-            isOpen
-              ? 'mb-[1px] rounded-b-none border-b-0 border-active-link'
-              : 'border-dark-blue'
+            isOpen ? 'rounded-b-none border-b-0 border-active-link' : 'border-dark-blue',
+            !openDown && isOpen && 'mb-[1px]'
           )}
         >
           <div className={'font-medium text-dark-blue'}>
@@ -73,9 +73,10 @@ export const SelectComponent = (props: SelectProperties) => {
         </div>
         {isOpen && (
           <ul
-            className={
-              'absolute top-6 z-10 w-full rounded-md rounded-t-none border border-t-0 border-active-link bg-white p-2 py-1 leading-4'
-            }
+            className={clsx(
+              ' z-10 w-full rounded-md rounded-t-none border border-t-0 border-active-link bg-white leading-4',
+              openDown ? 'mt-[-0.3rem] px-2 pb-1' : 'absolute top-6 p-2 py-1'
+            )}
           >
             {options.map((option) => (
               <OptionComponent
