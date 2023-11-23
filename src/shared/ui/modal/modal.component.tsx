@@ -8,13 +8,13 @@ interface IModalComponentProperties {
 }
 
 export const ModalComponent = ({ isOpen, children }: IModalComponentProperties) => {
-  const setBody = () => {
-    document.body.style.overflow = 'auto'
-  }
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'auto'
-    return setBody()
+    return () => {
+      document.body.style.overflow = 'visible'
+    }
   }, [isOpen])
+
   return (
     <>
       {isOpen ? (

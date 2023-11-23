@@ -15,12 +15,10 @@ export const Layout = (props: ILayoutProperties) => {
     <>
       {Meta}
       <div {...rest} className="flex min-h-screen flex-col">
-        <>
-          <Layout.Header />
-          <Layout.Main className={'flex min-h-full w-full flex-auto border-red-500'}>
-            {children}
-          </Layout.Main>
-        </>
+        <Layout.Header />
+        <Layout.Main className={'flex min-h-full w-full flex-auto border-red-500'}>
+          {children}
+        </Layout.Main>
       </div>
     </>
   )
