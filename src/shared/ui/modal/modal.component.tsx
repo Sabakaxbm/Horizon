@@ -18,9 +18,7 @@ export const ModalComponent = ({ isOpen, children }: IModalComponentProperties) 
   return (
     <>
       {isOpen ? (
-        <div
-          className={'fixed left-0 top-[5.2rem] z-10 flex min-h-full w-screen bg-white'}
-        >
+        <div className={'fixed left-0 top-[5.2rem] z-10 flex h-screen w-screen bg-white'}>
           {children}
         </div>
       ) : null}
