@@ -1,3 +1,4 @@
+import { clsx } from 'clsx'
 import type { ReactNode } from 'react'
 import { useEffect } from 'react'
 
@@ -5,9 +6,14 @@ interface IModalComponentProperties {
   onClick?: () => void
   children?: ReactNode
   isOpen: boolean
+  className?: string
 }
 
-export const ModalComponent = ({ isOpen, children }: IModalComponentProperties) => {
+export const ModalComponent = ({
+  isOpen,
+  children,
+  className,
+}: IModalComponentProperties) => {
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'auto'
     return () => {
@@ -15,13 +21,5 @@ export const ModalComponent = ({ isOpen, children }: IModalComponentProperties) 
     }
   }, [isOpen])
 
-  return (
-    <>
-      {isOpen ? (
-        <div className={'fixed left-0 top-[5.2rem] z-10 flex h-screen w-screen bg-white'}>
-          {children}
-        </div>
-      ) : null}
-    </>
-  )
+  return <>{isOpen ? <div className={clsx('', className)}>{children}</div> : null}</>
 }
