@@ -1,4 +1,4 @@
-import HeroMobile from '@public/image/heroMobile.png'
+import HeroMobile2 from '@public/image/heroMobile.webp'
 import { ContactsComponent, HeadingComponent } from '@widgets/layout/hero/ui'
 import Image from 'next/image'
 
@@ -11,7 +11,7 @@ export const HeroComponent = () => {
       }
     >
       <Image
-        src={HeroMobile}
+        src={HeroMobile2}
         alt={'heroImage'}
         fill
         style={{
