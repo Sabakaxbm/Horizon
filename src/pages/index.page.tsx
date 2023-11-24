@@ -3,6 +3,7 @@ import '@shared/styles/global.scss'
 import { FilterYachtComponent } from '@features/filter-yacht'
 import { RegistrationMobileComponent } from '@features/registration'
 import { HeroComponent } from '@widgets/layout/hero'
+import { ShipListComponent } from '@widgets/ship-list'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -23,8 +24,9 @@ export default function RootLayout() {
     <div className={'w-full'}>
       <HeroComponent />
       <RegistrationMobileComponent />
-      <section className={'px-page-mobile lg:px-page'}>
+      <section className={'px-page-mobile lg:grid lg:grid-cols-4 lg:px-page'}>
         <FilterYachtComponent />
+        <ShipListComponent />
       </section>
     </div>
   )

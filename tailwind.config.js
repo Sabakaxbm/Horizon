@@ -16,6 +16,8 @@ module.exports = {
         'dark-blue': '#172E49',
         'white-blue': '#A8E9FF',
         'input-bg': '#F3F3F3',
+        'sub-text': '#6D8C9D',
+        'gray-sub-text': '#8D8D8D',
         'page-bg': '#EAEDEE',
         'error': '#E0473D',
         'input-border': 'rgba(0, 0, 0, 0.06)'
@@ -50,6 +52,9 @@ module.exports = {
         'cus': '90px, 1fr 1fr',
 
         // Complex site-specific row configuration
+      },
+      fontSize: {
+        'title-card': '1.375rem'
       }
     },
   },
