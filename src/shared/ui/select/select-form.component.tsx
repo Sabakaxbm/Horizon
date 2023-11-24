@@ -1,10 +1,9 @@
+import type { Option } from '@shared/lib'
 import { IconComponent } from '@shared/ui/icons'
 import { OptionComponent } from '@shared/ui/select/option.component'
 import { clsx } from 'clsx'
 import type { MouseEventHandler } from 'react'
 import { useEffect, useRef, useState } from 'react'
-
-import type { Option } from './type'
 
 type SelectFormProperties = {
   selected?: Option | null
@@ -18,7 +17,7 @@ type SelectFormProperties = {
   label?: string
 }
 export const SelectFormComponent = (props: SelectFormProperties) => {
-  const { options, placeholder, selected, onChange, onClose, label, openDown } = props
+  const { options, placeholder, selected, className, onChange, onClose, label } = props
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const rootReference = useRef<HTMLDivElement>(null)
 
@@ -48,47 +47,49 @@ export const SelectFormComponent = (props: SelectFormProperties) => {
   }
 
   return (
-    <div className={'relative w-full font-montserrat text-sm'}>
+    <div className={'w-full font-montserrat'}>
+      <div className={'mb-3 text-[1rem] font-medium text-dark-blue'}>{label}</div>
       <div
         ref={rootReference}
-        className={'mt-auto inline-flex w-full select-none flex-col'}
+        className={'relative mt-auto inline-flex w-full select-none flex-col'}
       >
-        <div>{label}</div>
-        <div
-          className={clsx(
-            'flex cursor-pointer items-center justify-between gap-2 rounded-md border bg-input-bg px-5 py-3',
-            isOpen ? 'rounded-b-none border-b-0 border-active-link' : 'border-dark-blue',
-            !openDown && isOpen && 'mb-[1px]'
-          )}
-          onClick={handlePlaceHolderClick}
-        >
-          <div className={'font-medium text-dark-blue'}>
-            {selected?.title || placeholder}
-          </div>
-          <IconComponent
-            name={'SelectArrow'}
+        <div className={clsx('text-[0.75rem] text-dark-blue', className)}>
+          <div
             className={clsx(
-              'h-3.5 w-3.5 ',
-              isOpen ? 'rotate-180 fill-active-link' : 'fill-dark-blue'
+              'flex cursor-pointer items-center justify-between gap-2 rounded-md border bg-input-bg px-5 py-3',
+              isOpen ? 'rounded-b-none border-b-0' : ''
             )}
-          />
-        </div>
-        {isOpen && (
-          <ul
-            className={clsx(
-              ' z-10 w-full rounded-md rounded-t-none border border-t-0 border-active-link bg-input-bg leading-4',
-              openDown ? 'mt-[-0.3rem] px-2 pb-1' : 'absolute mt-[3.5rem] px-5 py-1'
-            )}
+            onClick={handlePlaceHolderClick}
           >
-            {options.map((option) => (
-              <OptionComponent
-                key={option.value}
-                option={option}
-                onClick={handleOptionClick}
-              />
-            ))}
-          </ul>
-        )}
+            <div className={'font-medium text-dark-blue'}>
+              {selected?.title || placeholder}
+            </div>
+            <IconComponent
+              name={'SelectArrow'}
+              className={clsx(
+                'h-3.5 w-3.5 ',
+                isOpen ? 'rotate-180 fill-active-link' : 'fill-dark-blue'
+              )}
+            />
+          </div>
+          {isOpen && (
+            <ul
+              className={clsx(
+                'z-10 w-full rounded-md rounded-t-none border border-t-0 bg-input-bg leading-4',
+                'absolute -mt-2 px-5 pb-3'
+              )}
+            >
+              {options.map((option) => (
+                <OptionComponent
+                  selected={selected}
+                  key={option.value}
+                  option={option}
+                  onClick={handleOptionClick}
+                />
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </div>
   )

@@ -1,9 +1,10 @@
+import type { Option } from '@shared/lib'
+import { clsx } from 'clsx'
 import type { MouseEventHandler } from 'react'
-
-import type { Option } from './type'
 
 type OptionProperties = {
   option: Option
+  selected?: Option | null
   onClick: (value: Option['value']) => void
 }
 
@@ -11,6 +12,7 @@ export const OptionComponent = (props: OptionProperties) => {
   const {
     option: { value, title },
     onClick,
+    selected,
   } = props
 
   const handleClick =
@@ -21,7 +23,10 @@ export const OptionComponent = (props: OptionProperties) => {
 
   return (
     <li
-      className={'py-0.5 hover:text-active-link'}
+      className={clsx(
+        'cursor-pointer py-1 hover:text-active-link',
+        selected?.value === value && 'text-active-link'
+      )}
       value={value}
       onClick={handleClick(value)}
       tabIndex={0}

@@ -132,12 +132,7 @@ export const RegistrationFormComponent = ({}: RegistrationFormProperties) => {
           )}
         />
 
-        <ButtonComponent
-          className={
-            'mt-4 w-full py-4 text-[1.125rem] hover:shadow-active-button active:bg-dark-blue'
-          }
-          type="submit"
-        >
+        <ButtonComponent className={'mt-4 w-full py-4 text-[1.125rem]'} type="submit">
           Submit
         </ButtonComponent>
       </form>

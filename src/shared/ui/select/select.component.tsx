@@ -1,10 +1,9 @@
+import type { Option } from '@shared/lib'
 import { IconComponent } from '@shared/ui/icons'
 import { OptionComponent } from '@shared/ui/select/option.component'
 import { clsx } from 'clsx'
 import type { MouseEventHandler } from 'react'
 import { useEffect, useRef, useState } from 'react'
-
-import type { Option } from './type'
 
 type SelectProperties = {
   selected?: Option | null

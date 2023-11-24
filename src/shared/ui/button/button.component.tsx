@@ -8,7 +8,7 @@ export const ButtonComponent = (props: ButtonProperties) => {
     <button
       {...props}
       className={clsx(
-        'cursor-pointer items-center justify-center rounded bg-active-link font-medium text-white',
+        'cursor-pointer items-center justify-center rounded bg-active-link font-medium text-white hover:shadow-active-button active:bg-dark-blue',
         className
       )}
     >
