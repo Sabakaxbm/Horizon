@@ -20,6 +20,7 @@ module.exports = {
         'gray-sub-text': '#8D8D8D',
         'page-bg': '#EAEDEE',
         'error': '#E0473D',
+        'grey-dash': '#D8D8D8',
         'input-border': 'rgba(0, 0, 0, 0.06)'
       },
       fontFamily: {

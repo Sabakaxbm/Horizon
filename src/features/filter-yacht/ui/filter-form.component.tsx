@@ -2,8 +2,12 @@ import { useSelect } from '@shared/lib'
 import { optionsGuest, optionsTypes } from '@shared/lib/constants'
 import { ButtonComponent } from '@shared/ui/button'
 import { SelectFormComponent } from '@shared/ui/select'
+import { clsx } from 'clsx'
 
-export const FilterFormComponent = () => {
+interface FilterFormComponentProperties {
+  isVisible: boolean
+}
+export const FilterFormComponent = ({ isVisible }: FilterFormComponentProperties) => {
   const { selected: selectedType, handleElement: handleType } = useSelect(optionsTypes)
   const { selected: selectedCrew, handleElement: handleCrew } = useSelect(optionsTypes)
   const { selected: selectedGuest, handleElement: handleGuest } = useSelect(optionsGuest)
@@ -12,9 +16,11 @@ export const FilterFormComponent = () => {
   const { selected: selectedPrice, handleElement: handlePrice } = useSelect(optionsGuest)
   return (
     <div
-      className={
-        'mb-6 flex flex-col items-center justify-between bg-white font-montserrat font-medium'
-      }
+      className={clsx(
+        isVisible
+          ? 'hidden'
+          : 'mb-6 flex flex-col items-center justify-between bg-white font-montserrat font-medium'
+      )}
     >
       <div
         className={

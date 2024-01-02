@@ -6,6 +6,7 @@ export type IYacht = {
 }
 
 export type IYachtInfoPreview = {
+  [key: string]: any
   guestDay: number
   guestSleeping: number
   maxSpeed: string
